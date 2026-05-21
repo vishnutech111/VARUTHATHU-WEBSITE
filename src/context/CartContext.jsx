@@ -267,10 +267,17 @@
 
 
 
+// import React, {
+//   createContext,
+//   useEffect,
+//   useState,
+// } from "react";
+
 import React, {
   createContext,
   useEffect,
   useState,
+  useCallback,
 } from "react";
 
 /* =========================
@@ -331,39 +338,77 @@ const CartProvider = ({
       SAVE CART
   ========================== */
 
+  // useEffect(() => {
+
+  //   localStorage.setItem(
+  //     "varuthathu_cart",
+  //     JSON.stringify(cartItems)
+  //   );
+
+  //   calculateCartTotal();
+
+  // }, [cartItems]);
+
+
+
   useEffect(() => {
 
-    localStorage.setItem(
-      "varuthathu_cart",
-      JSON.stringify(cartItems)
-    );
+  localStorage.setItem(
+    "varuthathu_cart",
+    JSON.stringify(cartItems)
+  );
 
-    calculateCartTotal();
+  calculateCartTotal();
 
-  }, [cartItems]);
+}, [
+  cartItems,
+  calculateCartTotal,
+]);
 
   /* =========================
       CALCULATE TOTAL
   ========================== */
 
+  // const calculateCartTotal =
+  //   () => {
+
+  //     const total =
+  //       cartItems.reduce(
+  //         (acc, item) => {
+
+  //           return (
+  //             acc +
+  //             item.price *
+  //               item.quantity
+  //           );
+  //         },
+  //         0
+  //       );
+
+  //     setCartTotal(total);
+  //   };
+
+
+
   const calculateCartTotal =
-    () => {
+  useCallback(() => {
 
-      const total =
-        cartItems.reduce(
-          (acc, item) => {
+    const total =
+      cartItems.reduce(
+        (acc, item) => {
 
-            return (
-              acc +
-              item.price *
-                item.quantity
-            );
-          },
-          0
-        );
+          return (
+            acc +
+            item.price *
+              item.quantity
+          );
+        },
+        0
+      );
 
-      setCartTotal(total);
-    };
+    setCartTotal(total);
+
+  }, [cartItems]);
 
   /* =========================
       ADD TO CART

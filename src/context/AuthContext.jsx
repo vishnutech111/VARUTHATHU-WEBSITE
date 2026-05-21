@@ -245,10 +245,17 @@
 
 
 
+// import React, {
+//   createContext,
+//   useEffect,
+//   useState,
+// } from "react";
+
 import React, {
   createContext,
   useEffect,
   useState,
+  useCallback,
 } from "react";
 
 import axios from "axios";
@@ -291,56 +298,109 @@ const AuthProvider = ({
       LOAD USER
   ========================== */
 
+  // const loadUser =
+  //   async () => {
+
+  //     try {
+
+  //       const token =
+  //         localStorage.getItem(
+  //           "varuthathu_token"
+  //         );
+
+  //       if (!token) {
+
+  //         setLoading(false);
+
+  //         return;
+  //       }
+
+  //       const response =
+  //         await axios.get(
+  //           `${BASE_URL}/auth/me`,
+  //           {
+  //             headers: {
+  //               Authorization:
+  //                 `Bearer ${token}`,
+  //             },
+  //           }
+  //         );
+
+  //       setUser(
+  //         response.data.user
+  //       );
+
+  //     } catch (error) {
+
+  //       console.log(
+  //         "Load User Error:",
+  //         error
+  //       );
+
+  //       localStorage.removeItem(
+  //         "varuthathu_token"
+  //       );
+
+  //       setUser(null);
+
+  //     } finally {
+
+  //       setLoading(false);
+  //     }
+  //   };
+
+
   const loadUser =
-    async () => {
+  useCallback(async () => {
 
-      try {
+    try {
 
-        const token =
-          localStorage.getItem(
-            "varuthathu_token"
-          );
-
-        if (!token) {
-
-          setLoading(false);
-
-          return;
-        }
-
-        const response =
-          await axios.get(
-            `${BASE_URL}/auth/me`,
-            {
-              headers: {
-                Authorization:
-                  `Bearer ${token}`,
-              },
-            }
-          );
-
-        setUser(
-          response.data.user
-        );
-
-      } catch (error) {
-
-        console.log(
-          "Load User Error:",
-          error
-        );
-
-        localStorage.removeItem(
+      const token =
+        localStorage.getItem(
           "varuthathu_token"
         );
 
-        setUser(null);
-
-      } finally {
+      if (!token) {
 
         setLoading(false);
+
+        return;
       }
-    };
+
+      const response =
+        await axios.get(
+          `${BASE_URL}/auth/me`,
+          {
+            headers: {
+              Authorization:
+                `Bearer ${token}`,
+            },
+          }
+        );
+
+      setUser(
+        response.data.user
+      );
+
+    } catch (error) {
+
+      console.log(
+        "Load User Error:",
+        error
+      );
+
+      localStorage.removeItem(
+        "varuthathu_token"
+      );
+
+      setUser(null);
+
+    } finally {
+
+      setLoading(false);
+    }
+
+  }, [BASE_URL]);
 
   /* =========================
       LOGIN
@@ -499,7 +559,7 @@ const AuthProvider = ({
 
     loadUser();
 
-  }, []);
+  }, [loadUser]);
 
   /* =========================
       CONTEXT VALUE
