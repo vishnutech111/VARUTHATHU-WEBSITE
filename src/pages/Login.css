@@ -1,0 +1,164 @@
+/* Login.css */
+
+.login-page{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fffdf4;
+  padding:80px 20px;
+  overflow:hidden;
+}
+
+.login-container{
+  width:100%;
+  max-width:450px;
+  background:#ffffff;
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  animation:fadeUp 0.8s ease;
+}
+
+.login-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.login-badge{
+  display:inline-block;
+  background:#f7d046;
+  color:#111111;
+  padding:10px 22px;
+  border-radius:50px;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.login-title{
+  font-size:42px;
+  font-weight:700;
+  color:#1a1a1a;
+  margin-bottom:10px;
+}
+
+.login-subtitle{
+  color:#666666;
+  line-height:1.8;
+}
+
+.login-error{
+  background:#ffe5e5;
+  color:#d10000;
+  padding:16px 20px;
+  border-radius:18px;
+  margin-bottom:25px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.login-form{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.login-label{
+  display:block;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:10px;
+  color:#1a1a1a;
+}
+
+.login-input-group{
+  display:flex;
+  align-items:center;
+  border:1px solid #dddddd;
+  border-radius:18px;
+  overflow:hidden;
+  transition:0.3s ease;
+  background:#ffffff;
+}
+
+.login-input-group:focus-within{
+  border-color:#f7d046;
+  box-shadow:0 0 0 4px rgba(247,208,70,0.2);
+}
+
+.login-input-icon{
+  padding:0 16px;
+  color:#777777;
+  font-size:18px;
+}
+
+.login-input{
+  width:100%;
+  border:none;
+  outline:none;
+  padding:16px;
+  font-size:15px;
+  background:transparent;
+}
+
+.password-toggle{
+  border:none;
+  background:none;
+  padding:0 16px;
+  cursor:pointer;
+  color:#777777;
+  font-size:18px;
+}
+
+.login-button-wrapper{
+  padding-top:10px;
+}
+
+.loader-wrapper{
+  display:flex;
+  justify-content:center;
+}
+
+.login-footer{
+  text-align:center;
+  margin-top:30px;
+  color:#666666;
+  font-size:15px;
+}
+
+.signup-link{
+  color:#f7d046;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s ease;
+}
+
+.signup-link:hover{
+  text-decoration:underline;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:768px){
+
+  .login-container{
+    padding:30px 24px;
+  }
+
+  .login-title{
+    font-size:34px;
+  }
+
+}

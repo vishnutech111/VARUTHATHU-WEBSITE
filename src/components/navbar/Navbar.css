@@ -1,0 +1,528 @@
+/* ===================================
+   MOBILE MENU CONTAINER
+=================================== */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  max-width: 85%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+  transition: right 0.4s ease-in-out;
+  overflow-y: auto;
+}
+
+/* Active Menu */
+
+.mobile-menu.active {
+  right: 0;
+  animation: slideInMenu 0.4s ease;
+}
+
+/* ===================================
+   TOP SECTION
+=================================== */
+
+.mobile-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.mobile-logo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #f4c430;
+  letter-spacing: 1px;
+}
+
+.close-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #fff7d6;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.close-btn:hover {
+  background: #f4c430;
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.05);
+}
+
+/* ===================================
+   NAVIGATION LINKS
+=================================== */
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.mobile-nav-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 196, 48, 0.18),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.mobile-nav-links a:hover::before {
+  left: 100%;
+}
+
+.mobile-nav-links a:hover {
+  background: #fff7d6;
+  color: #000000;
+  transform: translateX(6px);
+}
+
+.mobile-nav-links a.active {
+  background: #f4c430;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(244, 196, 48, 0.35);
+}
+
+/* ===================================
+   ACTION BUTTONS
+=================================== */
+
+.mobile-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-action-btn,
+.mobile-logout-btn {
+  width: 100%;
+  border: none;
+  text-decoration: none;
+  background: #fff7d6;
+  color: #222222;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.mobile-action-btn svg,
+.mobile-logout-btn svg {
+  font-size: 1rem;
+}
+
+.mobile-action-btn:hover,
+.mobile-logout-btn:hover {
+  background: #f4c430;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(244, 196, 48, 0.35);
+}
+
+/* Logout Button */
+
+.mobile-logout-btn {
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid #f4c430;
+}
+
+.mobile-logout-btn:hover {
+  background: #f4c430;
+  color: #ffffff;
+}
+
+/* ===================================
+   SCROLLBAR
+=================================== */
+
+.mobile-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+  background: #f4c430;
+  border-radius: 10px;
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media screen and (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .mobile-logo {
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav-links a {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(247, 208, 70, 0.2);
+  animation: navbarFade 0.6s ease;
+}
+
+@keyframes navbarFade {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  color: #f7c600;
+  transform: scale(1.04);
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f7c600;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #f7c600;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links .active {
+  color: #f7c600;
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* =========================
+   ICON BUTTON
+========================= */
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff7d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  color: #222;
+  border: 1px solid rgba(247, 208, 70, 0.4);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.icon-btn:hover {
+  background: #f7c600;
+  color: #111;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(247, 208, 70, 0.35);
+}
+
+/* =========================
+   CART COUNT
+========================= */
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  min-width: 20px;
+  height: 20px;
+  background: #111;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  animation: bounceCount 1.5s infinite;
+}
+
+@keyframes bounceCount {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* =========================
+   USER AREA
+========================= */
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-btn {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    #f7c600,
+    #ffe27a
+  );
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 24px rgba(247, 208, 70, 0.25);
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(247, 208, 70, 0.4);
+}
+
+/* =========================
+   MENU TOGGLE
+========================= */
+
+.menu-toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: #fff7d6;
+  color: #111;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: #f7c600;
+  transform: rotate(5deg);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+@media (max-width: 992px) {
+
+  .nav-links {
+    position: fixed;
+    top: 85px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 85px);
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 30px;
+    gap: 28px;
+    transition: 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+    border-left: 1px solid rgba(247, 208, 70, 0.2);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .navbar-container {
+    padding: 15px 4%;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .logout-btn {
+    display: none;
+  }
+
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+}

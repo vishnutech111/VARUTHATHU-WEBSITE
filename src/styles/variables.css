@@ -1,0 +1,262 @@
+/* ===================================
+   VARUTHATHU THEME VARIABLES
+=================================== */
+
+:root {
+
+  /* =========================
+      PRIMARY COLORS
+  ========================== */
+
+  --primary-color: #f7c600;
+
+  --primary-dark: #e4b400;
+
+  --primary-light: #fff4b3;
+
+  --banana-color: #ffe066;
+
+  --banana-soft: #fff8cc;
+
+  /* =========================
+      SECONDARY COLORS
+  ========================== */
+
+  --secondary-color: #fffdf4;
+
+  --secondary-dark: #fef3c7;
+
+  /* =========================
+      TEXT COLORS
+  ========================== */
+
+  --text-primary: #1a1a1a;
+
+  --text-secondary: #4b5563;
+
+  --text-light: #9ca3af;
+
+  --text-white: #ffffff;
+
+  /* =========================
+      BACKGROUND COLORS
+  ========================== */
+
+  --bg-white: #ffffff;
+
+  --bg-light: #f9fafb;
+
+  --bg-dark: #111827;
+
+  --bg-yellow-light: #fffbea;
+
+  /* =========================
+      BORDER COLORS
+  ========================== */
+
+  --border-color: #e5e7eb;
+
+  --border-light: #f3f4f6;
+
+  /* =========================
+      STATUS COLORS
+  ========================== */
+
+  --success-color: #16a34a;
+
+  --success-light: #dcfce7;
+
+  --danger-color: #dc2626;
+
+  --danger-light: #fee2e2;
+
+  --warning-color: #f59e0b;
+
+  --warning-light: #fef3c7;
+
+  --info-color: #2563eb;
+
+  --info-light: #dbeafe;
+
+  /* =========================
+      SHADOWS
+  ========================== */
+
+  --shadow-sm:
+    0 2px 8px rgba(0, 0, 0, 0.08);
+
+  --shadow-md:
+    0 6px 18px rgba(0, 0, 0, 0.1);
+
+  --shadow-lg:
+    0 10px 30px rgba(0, 0, 0, 0.14);
+
+  --shadow-xl:
+    0 18px 40px rgba(0, 0, 0, 0.16);
+
+  /* =========================
+      BORDER RADIUS
+  ========================== */
+
+  --radius-sm: 10px;
+
+  --radius-md: 18px;
+
+  --radius-lg: 28px;
+
+  --radius-xl: 40px;
+
+  --radius-full: 999px;
+
+  /* =========================
+      TRANSITIONS
+  ========================== */
+
+  --transition-fast:
+    all 0.2s ease;
+
+  --transition-normal:
+    all 0.3s ease;
+
+  --transition-slow:
+    all 0.5s ease;
+
+  /* =========================
+      FONT WEIGHTS
+  ========================== */
+
+  --font-light: 300;
+
+  --font-regular: 400;
+
+  --font-medium: 500;
+
+  --font-semibold: 600;
+
+  --font-bold: 700;
+
+  --font-black: 900;
+
+  /* =========================
+      FONT SIZES
+  ========================== */
+
+  --text-xs: 12px;
+
+  --text-sm: 14px;
+
+  --text-base: 16px;
+
+  --text-lg: 18px;
+
+  --text-xl: 20px;
+
+  --text-2xl: 24px;
+
+  --text-3xl: 30px;
+
+  --text-4xl: 36px;
+
+  --text-5xl: 48px;
+
+  /* =========================
+      SPACING
+  ========================== */
+
+  --space-xs: 6px;
+
+  --space-sm: 12px;
+
+  --space-md: 18px;
+
+  --space-lg: 24px;
+
+  --space-xl: 32px;
+
+  --space-2xl: 48px;
+
+  --space-3xl: 64px;
+
+  /* =========================
+      Z INDEX
+  ========================== */
+
+  --z-navbar: 1000;
+
+  --z-sidebar: 1100;
+
+  --z-modal: 1200;
+
+  --z-tooltip: 1300;
+}
+
+/* ===================================
+   DARK MODE VARIABLES
+=================================== */
+
+.dark-mode {
+
+  --bg-white: #111827;
+
+  --bg-light: #1f2937;
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #d1d5db;
+
+  --border-color: #374151;
+
+  --secondary-color: #1f2937;
+}
+
+/* ===================================
+   COMMON UTILITY CLASSES
+=================================== */
+
+.text-gradient {
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--warning-color)
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-effect {
+
+  background:
+    rgba(255, 255, 255, 0.2);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.3);
+}
+
+.shadow-primary {
+
+  box-shadow:
+    0 8px 24px
+    rgba(247, 198, 0, 0.25);
+}
+
+.transition-all {
+
+  transition:
+    var(--transition-normal);
+}
+
+.rounded-primary {
+
+  border-radius:
+    var(--radius-lg);
+}

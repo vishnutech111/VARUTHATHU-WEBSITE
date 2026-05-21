@@ -1,0 +1,322 @@
+/* =========================
+   MAIN PAGE
+========================= */
+
+.ourstory-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.story-hero {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.pexels.com/photos/32280801/pexels-photo-32280801.jpeg?cs=srgb&dl=pexels-the-pixel-blanket-253090633-32280801.jpg&fm=jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.story-hero-content {
+  text-align: center;
+  color: white;
+  animation: fadeUp 1s ease;
+}
+
+.story-badge {
+  display: inline-block;
+  background: #f7d046;
+  color: #1a1a1a;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  animation: pulse 2s infinite;
+}
+
+.story-hero-title {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.story-hero-text {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 20px;
+  color: #f1f1f1;
+}
+
+/* =========================
+   STORY SECTION
+========================= */
+
+.story-section {
+  padding: 100px 5%;
+}
+
+.story-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.story-image-wrapper {
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.story-image {
+  width: 100%;
+  border-radius: 30px;
+  transition: 0.6s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.story-image:hover {
+  transform: scale(1.05);
+}
+
+.story-content {
+  animation: fadeRight 1s ease;
+}
+
+.story-title {
+  font-size: 55px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.story-description {
+  font-size: 18px;
+  line-height: 2;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.story-description.last {
+  margin-bottom: 40px;
+}
+
+/* =========================
+   VALUES SECTION
+========================= */
+
+.values-section {
+  background: #fffdf4;
+  padding: 100px 5%;
+}
+
+.values-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.values-title {
+  font-size: 55px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.values-text {
+  max-width: 700px;
+  margin: auto;
+  color: #666;
+  line-height: 1.9;
+  font-size: 18px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.value-card {
+  background: white;
+  border-radius: 30px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  animation: fadeUp 1s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(247, 208, 70, 0.25);
+}
+
+.value-card h3 {
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.story-cta-section {
+  padding: 100px 5%;
+}
+
+.story-cta-box {
+  max-width: 1100px;
+  margin: auto;
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 80px 40px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-cta-box::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(247, 208, 70, 0.12);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+
+.story-cta-title {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.story-cta-text {
+  max-width: 700px;
+  margin: auto;
+  color: #d9d9d9;
+  line-height: 1.9;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .story-container,
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .story-title,
+  .values-title,
+  .story-cta-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .story-container,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-hero-title {
+    font-size: 50px;
+  }
+
+  .story-title,
+  .values-title,
+  .story-cta-title {
+    font-size: 34px;
+  }
+
+  .story-hero-text,
+  .story-description,
+  .values-text,
+  .story-cta-text {
+    font-size: 16px;
+  }
+
+  .story-cta-box {
+    padding: 60px 25px;
+  }
+}

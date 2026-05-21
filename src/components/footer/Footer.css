@@ -1,0 +1,410 @@
+/* =========================================
+   FOOTER SECTION
+========================================= */
+
+.footer {
+  width: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fffdf5 100%
+    );
+
+  border-top: 1px solid #f3e7b5;
+
+  padding-top: 80px;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* Decorative Glow */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  right: -120px;
+
+  width: 260px;
+  height: 260px;
+
+  background:
+    radial-gradient(
+      rgba(247, 198, 0, 0.18),
+      transparent
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+  width: 100%;
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  padding: 0 24px 60px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+
+  gap: 50px;
+
+  animation: footerFade 0.8s ease;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes footerFade {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   FOOTER COLUMN
+========================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 800;
+
+  color: #1a1a1a;
+
+  position: relative;
+
+  width: fit-content;
+}
+
+/* Underline */
+
+.footer-logo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 70%;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7d046,
+      #f7c600
+    );
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.footer-text {
+  color: #555555;
+
+  line-height: 1.8;
+
+  font-size: 1rem;
+
+  max-width: 320px;
+}
+
+/* =========================================
+   TITLES
+========================================= */
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  color: #1a1a1a;
+
+  margin-bottom: 6px;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.footer-links {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+
+  color: #555555;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition:
+    all 0.3s ease;
+
+  position: relative;
+
+  width: fit-content;
+}
+
+/* Hover Underline */
+
+.footer-links li a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #f7c600;
+
+  transition: width 0.3s ease;
+}
+
+.footer-links li a:hover::after {
+  width: 100%;
+}
+
+.footer-links li a:hover {
+  color: #f7b500;
+
+  transform: translateX(5px);
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4c2,
+      #f7d046
+    );
+
+  color: #ffffff;
+
+  font-size: 1.1rem;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px rgba(247, 198, 0, 0.15);
+
+  transition:
+    all 0.35s ease;
+}
+
+/* Hover */
+
+.social-icon:hover {
+  transform:
+    translateY(-5px)
+    rotate(8deg);
+
+  box-shadow:
+    0 16px 30px rgba(247, 198, 0, 0.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7c600,
+      #f7d046
+    );
+}
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #555555;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Hover */
+
+.footer-contact p:hover {
+  color: #f7b500;
+
+  transform: translateX(6px);
+}
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  border-top: 1px solid #f1e6b5;
+
+  background: #ffffff;
+
+  padding: 24px;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #777777;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+
+    padding-bottom: 50px;
+  }
+
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+
+  .footer-title {
+    font-size: 1.15rem;
+  }
+
+  .footer-text,
+  .footer-links li a,
+  .footer-contact p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .footer-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .footer-bottom {
+    padding: 18px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.88rem;
+  }
+}
