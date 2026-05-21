@@ -88,9 +88,15 @@
 // export default BlogList;
 
 
+// import React, {
+//   useEffect,
+//   useState,
+// } from "react";
+
 import React, {
   useEffect,
   useState,
+  useCallback,
 } from "react";
 
 import axios from "axios";
@@ -131,35 +137,67 @@ const BlogList = () => {
       GET BLOGS
   ========================== */
 
+  // const getBlogs =
+  //   async () => {
+
+  //     try {
+
+  //       setLoading(true);
+
+  //       const response =
+  //         await axios.get(
+  //           `${BASE_URL}/blogs`
+  //         );
+
+  //       setBlogs(
+  //         response.data.blogs || []
+  //       );
+
+  //     } catch (error) {
+
+  //       console.log(error);
+
+  //       setError(
+  //         "Failed to load blogs"
+  //       );
+
+  //     } finally {
+
+  //       setLoading(false);
+  //     }
+  //   };
+
+
   const getBlogs =
-    async () => {
+  useCallback(async () => {
 
-      try {
+    try {
 
-        setLoading(true);
+      setLoading(true);
 
-        const response =
-          await axios.get(
-            `${BASE_URL}/blogs`
-          );
-
-        setBlogs(
-          response.data.blogs || []
+      const response =
+        await axios.get(
+          `${BASE_URL}/blogs`
         );
 
-      } catch (error) {
+      setBlogs(
+        response.data.blogs || []
+      );
 
-        console.log(error);
+    } catch (error) {
 
-        setError(
-          "Failed to load blogs"
-        );
+      console.log(error);
 
-      } finally {
+      setError(
+        "Failed to load blogs"
+      );
 
-        setLoading(false);
-      }
-    };
+    } finally {
+
+      setLoading(false);
+    }
+
+  }, [BASE_URL]);
 
   /* =========================
       INITIAL LOAD

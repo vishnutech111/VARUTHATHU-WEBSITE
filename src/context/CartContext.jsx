@@ -340,7 +340,7 @@ const CartProvider = ({
 
     calculateCartTotal();
 
-  }, [cartItems,calculateCartTotal]);
+  }, [cartItems]);
 
   /* =========================
       CALCULATE TOTAL

@@ -450,10 +450,17 @@
 
 
 
+// import React, {
+//   createContext,
+//   useEffect,
+//   useState,
+// } from "react";
+
 import React, {
   createContext,
   useEffect,
   useState,
+  useCallback,
 } from "react";
 
 import axios from "axios";
@@ -516,59 +523,112 @@ const ProductProvider = ({
       GET ALL PRODUCTS
   ========================== */
 
+  // const getProducts =
+  //   async () => {
+
+  //     try {
+
+  //       setLoading(true);
+
+  //       const response =
+  //         await axios.get(
+  //           `${BASE_URL}/products`
+  //         );
+
+  //       setProducts(
+  //         response.data.products
+  //       );
+
+  //     } catch (error) {
+
+  //       console.log(error);
+
+  //       setError(
+  //         "Failed to fetch products"
+  //       );
+
+  //     } finally {
+
+  //       setLoading(false);
+  //     }
+  //   };
+
   const getProducts =
-    async () => {
+  useCallback(async () => {
 
-      try {
+    try {
 
-        setLoading(true);
+      setLoading(true);
 
-        const response =
-          await axios.get(
-            `${BASE_URL}/products`
-          );
-
-        setProducts(
-          response.data.products
+      const response =
+        await axios.get(
+          `${BASE_URL}/products`
         );
 
-      } catch (error) {
+      setProducts(
+        response.data.products
+      );
 
-        console.log(error);
+    } catch (error) {
 
-        setError(
-          "Failed to fetch products"
-        );
+      console.log(error);
 
-      } finally {
+      setError(
+        "Failed to fetch products"
+      );
 
-        setLoading(false);
-      }
-    };
+    } finally {
+
+      setLoading(false);
+    }
+
+  }, [BASE_URL]);
 
   /* =========================
       GET FEATURED PRODUCTS
   ========================== */
 
-  const getFeaturedProducts =
-    async () => {
+  // const getFeaturedProducts =
+  //   async () => {
 
-      try {
+  //     try {
 
-        const response =
-          await axios.get(
-            `${BASE_URL}/products/featured`
-          );
+  //       const response =
+  //         await axios.get(
+  //           `${BASE_URL}/products/featured`
+  //         );
 
-        setFeaturedProducts(
-          response.data.products
+  //       setFeaturedProducts(
+  //         response.data.products
+  //       );
+
+  //     } catch (error) {
+
+  //       console.log(error);
+  //     }
+  //   };
+
+const getFeaturedProducts =
+  useCallback(async () => {
+
+    try {
+
+      const response =
+        await axios.get(
+          `${BASE_URL}/products/featured`
         );
 
-      } catch (error) {
+      setFeaturedProducts(
+        response.data.products
+      );
 
-        console.log(error);
-      }
-    };
+    } catch (error) {
+
+      console.log(error);
+    }
+
+  }, [BASE_URL]);
+
 
   /* =========================
       GET SINGLE PRODUCT
@@ -608,25 +668,46 @@ const ProductProvider = ({
       GET CATEGORIES
   ========================== */
 
+  // const getCategories =
+  //   async () => {
+
+  //     try {
+
+  //       const response =
+  //         await axios.get(
+  //           `${BASE_URL}/products/categories`
+  //         );
+
+  //       setCategories(
+  //         response.data.categories
+  //       );
+
+  //     } catch (error) {
+
+  //       console.log(error);
+  //     }
+  //   };
+
   const getCategories =
-    async () => {
+  useCallback(async () => {
 
-      try {
+    try {
 
-        const response =
-          await axios.get(
-            `${BASE_URL}/products/categories`
-          );
-
-        setCategories(
-          response.data.categories
+      const response =
+        await axios.get(
+          `${BASE_URL}/products/categories`
         );
 
-      } catch (error) {
+      setCategories(
+        response.data.categories
+      );
 
-        console.log(error);
-      }
-    };
+    } catch (error) {
+
+      console.log(error);
+    }
+
+  }, [BASE_URL]);
 
   /* =========================
       SEARCH PRODUCTS
@@ -879,15 +960,29 @@ const ProductProvider = ({
       INITIAL LOAD
   ========================== */
 
+  // useEffect(() => {
+
+  //   getProducts();
+
+  //   getFeaturedProducts();
+
+  //   getCategories();
+
+  // }, [getCategories]);
+
   useEffect(() => {
 
-    getProducts();
+  getProducts();
 
-    getFeaturedProducts();
+  getFeaturedProducts();
 
-    getCategories();
+  getCategories();
 
-  }, [getCategories]);
+}, [
+  getProducts,
+  getFeaturedProducts,
+  getCategories,
+]);
 
   /* =========================
       CONTEXT VALUE
