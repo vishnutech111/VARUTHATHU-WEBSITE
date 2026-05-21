@@ -351,19 +351,7 @@ const CartProvider = ({
 
 
 
-  useEffect(() => {
-
-  localStorage.setItem(
-    "varuthathu_cart",
-    JSON.stringify(cartItems)
-  );
-
-  calculateCartTotal();
-
-}, [
-  cartItems,
-  calculateCartTotal,
-]);
+  
 
   /* =========================
       CALCULATE TOTAL
@@ -409,6 +397,24 @@ const CartProvider = ({
     setCartTotal(total);
 
   }, [cartItems]);
+
+
+
+
+
+  useEffect(() => {
+
+  localStorage.setItem(
+    "varuthathu_cart",
+    JSON.stringify(cartItems)
+  );
+
+  calculateCartTotal();
+
+}, [
+  cartItems,
+  calculateCartTotal,
+]);
 
   /* =========================
       ADD TO CART
