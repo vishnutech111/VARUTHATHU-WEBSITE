@@ -499,7 +499,7 @@ const AuthProvider = ({
 
     loadUser();
 
-  }, []);
+  }, [loadUser]);
 
   /* =========================
       CONTEXT VALUE

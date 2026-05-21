@@ -249,7 +249,7 @@ const ProductDetails = () => {
       getSingleProduct(id);
     }
 
-  }, [id]);
+  }, [id, getSingleProduct]);
 
   /* =========================
       ADD TO CART

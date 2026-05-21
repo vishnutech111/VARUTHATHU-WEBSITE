@@ -232,7 +232,7 @@ const Products = () => {
 
     getProducts();
 
-  }, []);
+  }, [getProducts]);
 
   /* =========================
       HANDLE SEARCH

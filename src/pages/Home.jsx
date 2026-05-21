@@ -409,11 +409,11 @@ import SlideAnimation from "../components/animations/SlideAnimation";
 import Button from "../components/common/Button";
 
 /* Icons */
-import {
-  FaLeaf,
-  FaShippingFast,
-  FaStar,
-} from "react-icons/fa";
+// import {
+//   FaLeaf,
+//   FaShippingFast,
+//   FaStar,
+// } from "react-icons/fa";
 
 const Home = () => {
 

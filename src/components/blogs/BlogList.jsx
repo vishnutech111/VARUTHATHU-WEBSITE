@@ -169,7 +169,7 @@ const BlogList = () => {
 
     getBlogs();
 
-  }, []);
+  }, [getBlogs]);
 
   /* =========================
       LOADING

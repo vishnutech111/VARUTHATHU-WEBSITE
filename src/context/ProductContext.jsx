@@ -887,7 +887,7 @@ const ProductProvider = ({
 
     getCategories();
 
-  }, []);
+  }, [getCategories]);
 
   /* =========================
       CONTEXT VALUE
